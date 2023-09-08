@@ -8,6 +8,7 @@ class ConwaysGameOfLife:
         self.window_height = 600
         self.rows = 100
         self.cols = 100
+        self.tick = 10
         self.grid = [[random.randint(0, 1) for _ in range(self.cols)] for _ in range(self.rows)]
 
     def draw_grid(self, screen):
@@ -78,7 +79,7 @@ class ConwaysGameOfLife:
             self.draw_grid(screen)
             pygame.display.flip()
 
-            clock.tick(10)
+            clock.tick(self.tick)
 
         pygame.quit()
 
